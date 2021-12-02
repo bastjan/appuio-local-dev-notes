@@ -1,0 +1,13 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: ClusterConfiguration
+    apiServer:
+        extraArgs:
+          oidc-issuer-url: https://id.dev.appuio.cloud/auth/realms/appuio-cloud-dev
+          oidc-client-id: local-dev-environment
+          oidc-username-claim: email
+          oidc-groups-claim: groups
