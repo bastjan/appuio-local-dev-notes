@@ -5,7 +5,7 @@
 kind create cluster --config=kind-with-oicd.yaml
 # OR
 k3d cluster create $CLUSTER_NAME \
-    --k3s-arg "--kube-apiserver-arg=oidc-issuer-url=<https://id.dev.appuio.cloud/auth/realms/appuio-cloud-dev" \
+    --k3s-arg "--kube-apiserver-arg=oidc-issuer-url=https://id.dev.appuio.cloud/auth/realms/appuio-cloud-dev" \
     --k3s-arg "--kube-apiserver-arg=oidc-client-id=local-dev-environment" \
     --k3s-arg "--kube-apiserver-arg=oidc-username-claim=email" \
     --k3s-arg "--kube-apiserver-arg=oidc-groups-claim=groups"
